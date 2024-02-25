@@ -26,16 +26,13 @@ console.log(fibonachiArray(5, 7));
 Например дан массив [1, 2, 3, 4, 5] в функцию передается место 3 и [ 'a', 'b', 'c']
 получается массив [1, 2, 3, 'a', 'b', 'c', 4, 5]. */
 
-function insertArray(arr, index, toInsert) {
-    let newArr = arr.slice(0, index); 
-    newArr = newArr.concat(toInsert);  
-    newArr = newArr.concat(arr.slice(index));  
-    return newArr;
-  }
+function insertArray(arr, index, data) {
+  return arr.slice(0, index).concat(data, arr.slice(index));
+}
 
-  let arr = [1, 2, 3, 4, 5];
-  let datatoInsert = ['a', 'b', 'c'];
-  let index = 3;
+let arr = [1, 2, 3, 4, 5];                          // Массив
+let dataToInsert = ['a', 'b', 'c'];                 // Данные для вставки
+let index = 3;                                      // Индекс
 
-  let resultArr = insertArray(arr, index, datatoInsert);
-  console.log(resultArr);  
+let resultArr = insertArray(arr, index, dataToInsert);
+console.log(resultArr); 
