@@ -24,6 +24,9 @@ jobs:
       - name: Dependencies
         working-directory: ./lesson15
         run: npm i
+      - name: Jest
+        working-directory: ./lesson15
+        run: npm install jest
       - name: Run tests
         working-directory: ./lesson15
-        run: npm test
+        run: npm run test
