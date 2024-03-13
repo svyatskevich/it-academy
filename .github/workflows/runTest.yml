@@ -21,12 +21,12 @@ jobs:
           node-version: 18.15.0
       - name: Folder
         run: cd ./lesson15
+
       - name: Dependencies
-        working-directory: ./lesson15
         run: npm i
+
       - name: Jest
-        working-directory: ./lesson15
         run: npm install jest
+
       - name: Run tests
-        working-directory: ./lesson15
         run: npm test
