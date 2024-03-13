@@ -6,7 +6,7 @@ on:
       - 'lesson15'
   pull_request:
     branches:
-      - 'lesson15'
+      - 'main'
 
 jobs:
   testing:
@@ -28,5 +28,5 @@ jobs:
         working-directory: ./lesson15
         run: npm install jest
       - name: Run tests
-        working-directory: ./lesson15/test
-        run: npm run test
+        working-directory: ./lesson15
+        run: npm test
