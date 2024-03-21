@@ -26,10 +26,6 @@ jobs:
       - name: Install dependencies
         working-directory: ./lesson15
         run:  npm i
-      
-      - name: Install jest
-        working-directory: ./lesson15
-        run:  npm install jest --save-dev
 
       - name: Run tests
         working-directory: ./lesson15
