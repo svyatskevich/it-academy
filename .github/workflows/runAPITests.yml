@@ -6,7 +6,7 @@ on:
       - 'lesson16'
   pull_request:
     branches:
-      - 'main'
+      - 'lesson16'
 
 jobs:
   testing:
