@@ -26,7 +26,8 @@ describe("UI Tests ChromeDriver", function () {
         const extensionLink = await driver.findElement(By.css('.jgXgSe[href="/extensions"]'));
         await extensionLink.click();
 
-        await driver.wait(until.elementLocated(By.ccs("#h\.p_ID_13")), 1000);
+        const h1Extensions = await driver.wait(until.elementLocated(By.ccs("span.Rn3Z1b")), 1000);
+        await driver.wait(until.elementIsVisible(h1Extensions), 1000);
         await driver.executeScript("arguments[0].style.backgroundColor = '" + "green" + "'", h1Extensions);
 
         const mainTitle = await driver.getTitle();
