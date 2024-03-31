@@ -35,6 +35,7 @@ jobs:
           CHROME_DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
           echo "Chrome version: $CHROME_VERSION"
           echo "ChromeDriver version: $CHROME_DRIVER_VERSION"
+          echo "export CHROME_DRIVER_VERSION=$CHROME_DRIVER_VERSION" >> $GITHUB_ENV
 
       - name: Download and install ChromeDriver
         run: |
