@@ -1,4 +1,4 @@
-name: Run test
+name: Run UI test
 
 on:
   push:
@@ -20,12 +20,27 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.9.0
-      - name: Folder
-        run: cd ./lesson17
+
+      - name: Install Chrome
+        run: |
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb
+          sudo apt-get -f install -y
+          google-chrome --version
+          google-chrome --headless --version  
+
+      - name: Install ChromeDriver
+        run: |
+          CHROME_VERSION=$(google-chrome --version | cut -d ' ' -f 3)
+          CHROME_DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
+          wget "https://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VERSION}/chromedriver_linux64.zip"
+          unzip chromedriver_linux64.zip
+          chmod +x chromedriver
+          sudo mv chromedriver /usr/local/bin/
 
       - name: Install dependencies
         working-directory: ./lesson17
-        run:  npm i
+        run: npm install
 
       - name: Run tests
         working-directory: ./lesson17
