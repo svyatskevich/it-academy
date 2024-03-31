@@ -27,7 +27,7 @@ jobs:
           sudo dpkg -i google-chrome-stable_current_amd64.deb
           sudo apt-get -f install -y
           google-chrome --version
-          google-chrome --headless --version  
+          google-chrome --headless --version  # Добавлен параметр --headless
 
       - name: Install ChromeDriver
         run: |
