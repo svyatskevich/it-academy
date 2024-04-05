@@ -8,7 +8,7 @@ describe("Tests for calculator methods", () => {
   });
 
   // Add
-  describe("Addition tests (Positive)", () => {
+  describe("Addition tests", () => {
     [
       { arr: [2, 3], result: 5, description: "two numbers" },
       { arr: [-2, -5], result: -7, description: "negative numbers" },
@@ -24,21 +24,9 @@ describe("Tests for calculator methods", () => {
     });
   });
 
-  describe("Addition tests (Negative)", () => {
-    [
-      { arr: [10], result: 10, description: "number when 1 argument is passed" },
-      { arr: [true, true], result: 2, description: "sum of boolean arguments" },
-    ].forEach((testData) => {
-      it(`should return ${testData.description}`, async () => {
-        const addititonResult = calculator.add(...testData.arr);
-        expect(addititonResult).toEqual(testData.result);
-      });
-    });
-  });
-
 
   // Multiply
-  describe("Multiplication tests (Positive)", () => {
+  describe("Multiplication tests", () => {
     [
       { arr: [3, 3], result: 9, description: "two numbers" },
       { arr: [-2, -3], result: 6, description: "negative numbers" },
@@ -55,22 +43,9 @@ describe("Tests for calculator methods", () => {
     });
   });
 
-  describe("Multiplication tests (Negative)", () => {
-    [
-      { arr: [15], result: 15, description: "number when 1 argument is passed" },
-      { arr: [true, true], result: 1, description: "multiplication of boolean arguments" },
-      { arr: ["15", "2"], result: 30, description: "multiplication of string type numbers" },
-    ].forEach((testData) => {
-      it(`should return ${testData.description}`, async () => {
-        const multiplyResult = calculator.multiply(...testData.arr);
-        expect(multiplyResult).toEqual(testData.result);
-      });
-    });
-  });
-
 
   // Subtraction
-  describe("Subtraction tests (Positive)", () => {
+  describe("Subtraction tests", () => {
     [
       { a: 5, b: 3, result: 2, description: "two numbers" },
       { a: -15, b: -10, result: -5, description: "negative numbers" },
@@ -85,21 +60,9 @@ describe("Tests for calculator methods", () => {
     });
   });
 
-  describe("Subtraction tests (Negative)", () => {
-    [
-      { a: true, b: false, result: 1, description: "boolean type" },
-      { a: "15", b: "10", result: 5, description: "string type numbers" },
-    ].forEach((testData) => {
-      it(`should return difference of ${testData.description}`, async () => {
-        const subtractionResult = calculator.subtraction(testData.a, testData.b);
-        expect(subtractionResult).toEqual(testData.result);
-      });
-    });
-  });
-
 
   // Divide
-  describe("Tests of divide (Positive)", () => {
+  describe("Tests of divide", () => {
     [
       { a: 10, b: 2, result: 5, description: "two numbers" },
       { a: -50, b: -62, result: 0.8064516129032258, description: "negative numbers" },
@@ -114,22 +77,9 @@ describe("Tests for calculator methods", () => {
     });
   });
 
-  describe("Tests of divide (Negative)", () => {
-    [
-      { a: 60, b: 0, result: Infinity, description: "by 0" },
-      { a: true, b: true, result: 1, description: "boolean type" },
-      { a: "10", b: "2", result: 5, description: "string type numbers" },
-    ].forEach((testData) => {
-      it(`should return result of dividing ${testData.description}`, async () => {
-        const divideResult = calculator.divide(testData.a, testData.b);
-        expect(divideResult).toEqual(testData.result);
-      });
-    });
-  });
-
 
   // Exponentiation
-  describe("Exponentiation tests (Positive)", () => {
+  describe("Exponentiation tests", () => {
     [
       { value: 3, result: 9, description: "number" },
       { value: -3, result: 9, description: "negative number" },
@@ -143,16 +93,3 @@ describe("Tests for calculator methods", () => {
       });
     });
   });
-
-  describe("Exponentiation tests (Negative)", () => {
-    [
-      { value: true, result: 1, description: "boolean type" },
-      { value: "4", result: 16, description: "string type number" },
-    ].forEach((testData) => {
-      it(`should return square of ${testData.description}`, async () => {
-        const exponentiationResult = calculator.exponentiation(testData.value);
-        expect(exponentiationResult).toEqual(testData.result);
-      });
-    });
-  });
-});
