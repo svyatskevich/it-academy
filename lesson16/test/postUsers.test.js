@@ -1,6 +1,6 @@
 const axios = require("axios");
 const { Validator } = require("jsonschema");
-const postUsersJsonSchema = require("../testData/postUsers.v1.json");
+const postUsersJsonSchema = require("../testData/users.v1.json");
 
 const validator = new Validator();
 
