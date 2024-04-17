@@ -1,6 +1,6 @@
 const BasePage = require('../basePage');
 
-class NavBarItemRight extends BasePage {
+class NavBarItemsRight extends BasePage {
     get versionLink() {
         return $('//div[@class="navbar__items navbar__items--right"]/a[@class="navbar__item navbar__link"]');
     }
@@ -9,24 +9,8 @@ class NavBarItemRight extends BasePage {
         return $('//div[contains(@class,"navbar__item dropdown")]');
     }
 
-    get githubLink() {
-        return $('//a[@class="navbar__item navbar__link header-github-link"]');
-    }
-
     get nameRepoGithub() {
         return $('//strong[contains(@class, "mr-")]');
-    }
-
-    get twitterLink() {
-        return $('//a[@class="navbar__item navbar__link header-twitter-link"]');
-    }
-
-    get youtubeLink() {
-        return $('//a[@class="navbar__item navbar__link header-youtube-link"]');
-    }
-
-    get discordLink() {
-        return $('//a[@class="navbar__item navbar__link header-discord-link"]');
     }
 
     get switchModeButton() {
@@ -69,19 +53,16 @@ class NavBarItemRight extends BasePage {
         return currentlyTheme;
     }
 
-    async goToItemNavBarRight(linkName) {
-        const linkSelectors = {
-            github: this.githubLink,
-            twitter: this.twitterLink,
-            youtube: this.youtubeLink,
-            discord: this.discordLink,
-        };
+    async getNavBarRightItem(LINK_NAME) {
+        return $(`//a[@class="navbar__item navbar__link header-${LINK_NAME}-link"]`);
+    }
 
-        const linkElement = linkSelectors[linkName];
-        await linkElement.click();
-        const clickedUrl = await linkElement.getAttribute('href');
+    async goToItemNavBarRight(LINK_NAME) {
+        const navBarRightItemLink = await this.getNavBarRightItem(LINK_NAME);
+        await navBarRightItemLink.click();
+        const clickedUrl = await navBarRightItemLink.getAttribute('href');
         await browser.switchWindow(clickedUrl);
     }
 }
 
-module.exports = new NavBarItemRight();
+module.exports = new NavBarItemsRight();

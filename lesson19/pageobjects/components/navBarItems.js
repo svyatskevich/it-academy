@@ -1,44 +1,18 @@
 const BasePage = require('../basePage');
 
-class NavBarItem extends BasePage {
-    get mainPageLinkLogo() {
-        return $('//a[@class="navbar__brand"]');
-    }
-
-    get docsPageLink() {
-        return $('//a[@class="navbar__item navbar__link"][@href="/docs/gettingstarted"]');
-    }
-
-    get apiPageLink() {
-        return $('//a[@class="navbar__item navbar__link"][@href="/docs/api"]');
-    }
-
-    get blogPageLink() {
-        return $('//a[@class="navbar__item navbar__link"][@href="/blog"]');
-    }
-
-    get contributePageLink() {
-        return $('//a[@class="navbar__item navbar__link"][@href="/docs/contribute"]');
-    }
-
-    get communityPageLink() {
-        return $('//a[@class="navbar__item navbar__link"][@href="/community/support"]');
-    }
-
-    get sponsorPageLink() {
-        return $('//a[@class="navbar__item navbar__link"][@href="/docs/sponsor"]');
-    }
-
+class NavBarItems extends BasePage {
     get mainHeader() {
         return $('//header/h1');
     }
 
-    async navigateToPageNavBar(pageName) {
-        const navbarSelector = '.navbar__item.navbar__link';
-        const linkElement = $(`${navbarSelector}[href="/${pageName}"]`);
-        await linkElement.waitForExist();
-        await linkElement.click();
+    async getNavBarPageLink(PAGE_LINK) {
+        return $(`//a[@class="navbar__item navbar__link"][@href="/${PAGE_LINK}"]`);
+    }
+
+    async navigateToNavBarPage(PAGE_LINK) {
+        const navBarPageLink = await this.getNavBarPageLink(PAGE_LINK);
+        await navBarPageLink.click();
     }
 }
 
-module.exports = new NavBarItem();
+module.exports = new NavBarItems();
