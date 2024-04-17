@@ -1,11 +1,19 @@
-const BTTN_NAME = {
+const LINK_NAME = {
     GITHUB: 'github',
+    TWITTER: 'twitter',
+    YOUTUBE: 'youtube',
+    DISCORD: 'discord',
 };
 
-const LINK_NAME = {
+const PAGE_LINK = {
     BLOG: 'blog',
     SPONSOR: 'docs/sponsor',
     COMMUNITY: 'community/support',
+    DOCS: 'gettingstarted',
+    API: '/docs/api',
+    CONTRIBUTE: '/docs/contribute',
+    SUPPORT: '/community/support',
+
 };
 
-module.exports = { BTTN_NAME, LINK_NAME };
+module.exports = { LINK_NAME, PAGE_LINK };
