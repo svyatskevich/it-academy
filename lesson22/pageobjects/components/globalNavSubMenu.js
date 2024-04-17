@@ -2,11 +2,11 @@ const BasePage = require('../basePage');
 
 class GlobalNavSubMenu extends BasePage {
 
-    getSearchInput() {
+    get searchInput() {
         return cy.get("input.globalnav-searchfield-input");
     }
 
-    getSignInContainer() {
+    get signInContainer() {
         return cy.get("#signin-container");
     }
 
@@ -19,7 +19,7 @@ class GlobalNavSubMenu extends BasePage {
     }
 
     search(inputValue) {
-        this.getSearchInput().should('be.visible').click().type(inputValue);
+        this.searchInput.should('be.visible').click().type(inputValue);
     }
 
     getSearchResult(itemNumber) {
