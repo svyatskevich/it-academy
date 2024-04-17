@@ -30,6 +30,6 @@ describe('Apple test', () => {
     it('Should go to "Your Saves" without authorization and have visible SignIn container', () => {
       globalNavMenu.clickButton(BTTN_NAME.BAG);
       globalNavSubMenu.goToMyProfileLinks(LINK_NAME.YOURSAVES);
-      globalNavSubMenu.getSignInContainer().should('be.visible');
+      globalNavSubMenu.signInContainer.should('be.visible');
     });
   });
