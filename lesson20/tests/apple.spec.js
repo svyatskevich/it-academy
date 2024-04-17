@@ -18,7 +18,6 @@ test.describe('Apple test', async function () {
     globalNavMenu = new GlobalNavMenu(page);
     globalNavSubMenu = new GlobalNavSubMenu(page);
     localeSwitcher = new LocaleSwitcher(page);
-
   });
 
   test('Should contain url "/ipad" on the "iPad" page', async ({ page }) => {
