@@ -14,13 +14,13 @@ class GlobalNavMenu extends BasePage {
         await (await this.getNavMenuButton(BTTN_NAME)).click();
     }
 
-    async getNavMenuLinks(LINK_NAME) {
+    async getNavMenuLink(LINK_NAME) {
         return this.page.locator(`//*[@data-globalnav-item-name="${LINK_NAME}"]`);
     }
 
     async goToNavMenuItem(LINK_NAME) {
-        await (await this.getNavMenuLinks(LINK_NAME)).isVisible();
-        await (await this.getNavMenuLinks(LINK_NAME)).click();
+        await (await this.getNavMenuLink(LINK_NAME)).isVisible();
+        await (await this.getNavMenuLink(LINK_NAME)).click();
     }
 
     async openSubMenu(LINK_NAME) {
