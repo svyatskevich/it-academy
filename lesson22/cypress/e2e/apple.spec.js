@@ -2,7 +2,7 @@ const mainPage = require('../../pageobjects/mainPage');
 const globalNavMenu = require('../../pageobjects/components/globalNavMenu');
 const globalNavSubMenu = require('../../pageobjects/components/globalNavSubMenu');
 const localeSwitcher = require('../../pageobjects/components/localeSwitcher');
-const { BTTN_NAME, LINK_NAME } = require('../../helpers/constants');
+const { BTTN_NAME, LINK_NAME, PAGE_URL, PAGE_TITLE, TEXT } = require('../../helpers/constants');
 
 describe('Apple test', () => {
     beforeEach(() => {
@@ -11,25 +11,25 @@ describe('Apple test', () => {
     });
   
     it('Should contain url "/iphone" on the "iPhone" page', () => {
-      globalNavMenu.goToNavMenuItem(LINK_NAME.IPHONE);
-      cy.url().should('include', '/iphone');
+      mainPage.click(globalNavMenu.getNavMenuLinks(LINK_NAME.IPHONE));
+      cy.url().should('include', PAGE_URL.IPHONE);
     });
   
     it('Should go to "Apple Watch Store" subpage and contain title "Buy Apple Watch"', () => {
       globalNavMenu.openSubMenu(LINK_NAME.WATCH);
-      globalNavSubMenu.goToSubMenuItem('shop apple watch');
-      cy.title().should('contain', 'Buy Apple Watch');
+      mainPage.click(globalNavSubMenu.getSubMenuLink(LINK_NAME.SHOP_APPLEWATCH));
+      cy.title().should('contain', PAGE_TITLE.SHOP_APPLEWATCH);
     });
   
     it('Should contain "Apple" in 1st search result for "Apple" search query', () => {
-      globalNavMenu.clickButton(BTTN_NAME.SEARCH);
-      globalNavSubMenu.search('Apple');
-      globalNavSubMenu.getTextSearchResult(1).should('contain', 'Apple');
+      mainPage.click(globalNavMenu.getNavMenuButton(BTTN_NAME.SEARCH));
+      globalNavSubMenu.search(TEXT.APPLE);
+      globalNavSubMenu.getTextSearchResult(1).should('contain', TEXT.APPLE);
     });
   
     it('Should go to "Your Saves" without authorization and have visible SignIn container', () => {
-      globalNavMenu.clickButton(BTTN_NAME.BAG);
-      globalNavSubMenu.goToMyProfileLinks(LINK_NAME.YOURSAVES);
+      mainPage.click(globalNavMenu.getNavMenuButton(BTTN_NAME.BAG));
+      mainPage.click(globalNavSubMenu.getMyProfileLinks(LINK_NAME.YOURSAVES));
       globalNavSubMenu.signInContainer.should('be.visible');
     });
   });
