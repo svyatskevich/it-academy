@@ -19,6 +19,19 @@ const LINK_NAME = {
     YOURSAVES: 'yoursaves',
     ACCOUNT: 'account',
     SIGNIN: 'signin',
+    SHOP_APPLEWATCH: 'shop apple watch'
 }
 
-module.exports = { BTTN_NAME, LINK_NAME };
+const PAGE_URL = {
+    IPHONE: '/iphone'
+}
+
+const PAGE_TITLE = {
+SHOP_APPLEWATCH: 'Buy Apple Watch'
+}
+
+const TEXT = {
+    APPLE: 'Apple'
+}
+
+module.exports = { BTTN_NAME, LINK_NAME, PAGE_URL, PAGE_TITLE, TEXT};
