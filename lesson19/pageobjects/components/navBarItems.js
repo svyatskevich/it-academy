@@ -5,12 +5,12 @@ class NavBarItems extends BasePage {
         return $('//header/h1');
     }
 
-    async getNavBarPageLink(PAGE_LINK) {
-        return $(`//a[@class="navbar__item navbar__link"][@href="/${PAGE_LINK}"]`);
+    async getNavBarPageLink(pageLink) {
+        return $(`//a[@class="navbar__item navbar__link"][@href="/${pageLink}"]`);
     }
 
-    async navigateToNavBarPage(PAGE_LINK) {
-        const navBarPageLink = await this.getNavBarPageLink(PAGE_LINK);
+    async navigateToNavBarPage(pageLink) {
+        const navBarPageLink = await this.getNavBarPageLink(pageLink);
         await navBarPageLink.click();
     }
 }

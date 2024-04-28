@@ -53,12 +53,12 @@ class NavBarItemsRight extends BasePage {
         return currentlyTheme;
     }
 
-    async getNavBarRightItem(LINK_NAME) {
-        return $(`//a[@class="navbar__item navbar__link header-${LINK_NAME}-link"]`);
+    async getNavBarRightItem(linkName) {
+        return $(`//a[@class="navbar__item navbar__link header-${linkName}-link"]`);
     }
 
-    async goToItemNavBarRight(LINK_NAME) {
-        const navBarRightItemLink = await this.getNavBarRightItem(LINK_NAME);
+    async goToItemNavBarRight(linkName) {
+        const navBarRightItemLink = await this.getNavBarRightItem(linkName);
         await navBarRightItemLink.click();
         const clickedUrl = await navBarRightItemLink.getAttribute('href');
         await browser.switchWindow(clickedUrl);
