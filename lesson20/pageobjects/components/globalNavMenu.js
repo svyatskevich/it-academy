@@ -5,26 +5,26 @@ class GlobalNavMenu extends BasePage {
         super(page); 
     }
 
-    async getNavMenuButton(BTTN_NAME) {
-        return this.page.locator(`//*[@id="globalnav-menubutton-link-${BTTN_NAME}"]`);
+    async getNavMenuButton(bttnName) {
+        return this.page.locator(`//*[@id="globalnav-menubutton-link-${bttnName}"]`);
     }
 
-    async clickButton(BTTN_NAME) {
-        await (await this.getNavMenuButton(BTTN_NAME)).isVisible();
-        await (await this.getNavMenuButton(BTTN_NAME)).click();
+    async clickButton(bttnName) {
+        await (await this.getNavMenuButton(bttnName)).isVisible();
+        await (await this.getNavMenuButton(bttnName)).click();
     }
 
-    async getNavMenuLink(LINK_NAME) {
-        return this.page.locator(`//*[@data-globalnav-item-name="${LINK_NAME}"]`);
+    async getNavMenuLink(linkName) {
+        return this.page.locator(`//*[@data-globalnav-item-name="${linkName}"]`);
     }
 
-    async goToNavMenuItem(LINK_NAME) {
-        await (await this.getNavMenuLink(LINK_NAME)).isVisible();
-        await (await this.getNavMenuLink(LINK_NAME)).click();
+    async goToNavMenuItem(linkName) {
+        await (await this.getNavMenuLink(linkName)).isVisible();
+        await (await this.getNavMenuLink(linkName)).click();
     }
 
-    async openSubMenu(LINK_NAME) {
-        const navMenuLinks = await this.getNavMenuLinks(LINK_NAME);
+    async openSubMenu(linkName) {
+        const navMenuLinks = await this.getNavMenuLinks(linkName);
         await navMenuLinks.hover();
     }
 }

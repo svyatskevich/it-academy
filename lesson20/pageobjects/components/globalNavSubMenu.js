@@ -7,13 +7,13 @@ class GlobalNavSubMenu extends BasePage {
         this.signInContainer = page.locator("#signin-container");
     }
 
-    async getMyProfileLinks(LINK_NAME) {
-        return this.page.locator(`//*[@class="ac-gn-bagview-nav-item-wrapper"]//*[contains(text(), "${LINK_NAME}")]`);
+    async getMyProfileLinks(linkName) {
+        return this.page.locator(`//*[@class="ac-gn-bagview-nav-item-wrapper"]//*[contains(text(), "${linkName}")]`);
     }
 
-    async goToMyProfileLinks(LINK_NAME) {
-        await (await this.getMyProfileLinks(LINK_NAME)).isVisible();
-        await (await this.getMyProfileLinks(LINK_NAME)).click();
+    async goToMyProfileLinks(linkName) {
+        await (await this.getMyProfileLinks(linkName)).isVisible();
+        await (await this.getMyProfileLinks(linkName)).click();
     }
 
     async search(inputValue) {
@@ -32,12 +32,12 @@ class GlobalNavSubMenu extends BasePage {
         return searchResult.innerText(); 
     }
 
-    async getSubMenuLink(LINK_NAME) {
-        return this.page.locator(`//*[@class="globalnav-submenu-link"][contains(text(), '${LINK_NAME}')]`);
+    async getSubMenuLink(linkName) {
+        return this.page.locator(`//*[@class="globalnav-submenu-link"][contains(text(), '${linkName}')]`);
     }
 
-    async goToSubMenuItem(LINK_NAME) {
-        await (await this.getSubMenuLink(LINK_NAME)).click();
+    async goToSubMenuItem(linkName) {
+        await (await this.getSubMenuLink(linkName)).click();
     }
 }
 
