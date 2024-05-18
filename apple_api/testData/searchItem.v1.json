@@ -1,0 +1,551 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Generated schema for Root",
+    "type": "object",
+    "properties": {
+      "head": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object",
+            "properties": {},
+            "required": []
+          }
+        },
+        "required": [
+          "status",
+          "data"
+        ]
+      },
+      "body": {
+        "type": "object",
+        "properties": {
+          "sortOptions": {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "displayKey": {
+                      "type": "string"
+                    },
+                    "key": {
+                      "type": "string"
+                    },
+                    "link": {
+                      "type": "string"
+                    },
+                    "selected": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "displayKey",
+                    "key",
+                    "link",
+                    "selected"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "items"
+            ]
+          },
+          "results": {
+            "type": "object",
+            "properties": {
+              "explore": {
+                "type": "object",
+                "properties": {
+                  "exploreOrganic": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "sectionLabel": {},
+                      "tiles": {
+                        "type": "object",
+                        "properties": {
+                          "items": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "index": {
+                                  "type": "number"
+                                },
+                                "value": {
+                                  "type": "object",
+                                  "properties": {
+                                    "title": {
+                                      "type": "string"
+                                    },
+                                    "link": {
+                                      "type": "object",
+                                      "properties": {
+                                        "text": {
+                                          "type": "string"
+                                        },
+                                        "url": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "text",
+                                        "url"
+                                      ]
+                                    },
+                                    "feedbackUrl": {
+                                      "type": "string"
+                                    },
+                                    "resultRank": {
+                                      "type": "number"
+                                    },
+                                    "description": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "title",
+                                    "link",
+                                    "feedbackUrl",
+                                    "resultRank",
+                                    "description"
+                                  ]
+                                },
+                                "even": {
+                                  "type": "boolean"
+                                },
+                                "position": {
+                                  "type": "number"
+                                },
+                                "last": {
+                                  "type": "boolean"
+                                },
+                                "first": {
+                                  "type": "boolean"
+                                }
+                              },
+                              "required": [
+                                "index",
+                                "value",
+                                "even",
+                                "position",
+                                "last",
+                                "first"
+                              ]
+                            }
+                          },
+                          "size": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "items",
+                          "size"
+                        ]
+                      },
+                      "hasResults": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "sectionLabel",
+                      "tiles",
+                      "hasResults"
+                    ]
+                  }
+                },
+                "required": [
+                  "exploreOrganic"
+                ]
+              }
+            },
+            "required": [
+              "explore"
+            ]
+          },
+          "pageNumber": {
+            "type": "number"
+          },
+          "numOfPages": {
+            "type": "number"
+          },
+          "pageTitle": {
+            "type": "string"
+          },
+          "partialTitle": {
+            "type": "string"
+          },
+          "numberOfFiltersSelected": {
+            "type": "number"
+          },
+          "selectedTab": {
+            "type": "string"
+          },
+          "totalCountText": {
+            "type": "string"
+          },
+          "tabs": {
+            "type": "object",
+            "properties": {
+              "explore": {
+                "type": "object",
+                "properties": {
+                  "displayName": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "displayName",
+                  "url"
+                ]
+              },
+              "accessories": {
+                "type": "object",
+                "properties": {
+                  "displayName": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "displayName",
+                  "url"
+                ]
+              },
+              "support": {
+                "type": "object",
+                "properties": {
+                  "displayName": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "displayName",
+                  "url"
+                ]
+              },
+              "retail": {
+                "type": "object",
+                "properties": {
+                  "displayName": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "displayName",
+                  "url"
+                ]
+              }
+            },
+            "required": [
+              "explore",
+              "accessories",
+              "support",
+              "retail"
+            ]
+          },
+          "searchBox": {
+            "type": "object",
+            "properties": {
+              "formAttrsAction": {
+                "type": "string"
+              },
+              "param": {
+                "type": "string"
+              },
+              "searchResetValue": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "formAttrsAction",
+              "param",
+              "searchResetValue"
+            ]
+          },
+          "suggestions": {
+            "type": "object",
+            "properties": {
+              "params": {
+                "type": "object",
+                "properties": {
+                  "src": {
+                    "type": "string"
+                  },
+                  "locale": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src",
+                  "locale"
+                ]
+              },
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "params",
+              "url"
+            ]
+          },
+          "nextLink": {
+            "type": "string"
+          },
+          "responseError": {
+            "type": "boolean"
+          },
+          "searchTerm": {
+            "type": "string"
+          },
+          "hasRecommendations": {
+            "type": "boolean"
+          },
+          "internalSearchUrl": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "searchPage": {
+            "type": "boolean"
+          },
+          "internalSearchTimeout": {
+            "type": "number"
+          },
+          "mobile": {
+            "type": "boolean"
+          },
+          "hasPreviousResults": {
+            "type": "boolean"
+          },
+          "hasNextResults": {
+            "type": "boolean"
+          },
+          "hasResults": {
+            "type": "boolean"
+          },
+          "hasFilters": {
+            "type": "boolean"
+          },
+          "showFilters": {
+            "type": "boolean"
+          },
+          "showPagination": {
+            "type": "boolean"
+          },
+          "ui": {
+            "type": "object",
+            "properties": {
+              "error": {
+                "type": "object",
+                "properties": {
+                  "noTabResultsDescription": {
+                    "type": "string"
+                  },
+                  "noCategoryResultsDescription": {
+                    "type": "string"
+                  },
+                  "errorGettingResultsMessage": {
+                    "type": "string"
+                  },
+                  "noResultsTitle": {
+                    "type": "string"
+                  },
+                  "noResultsDescription": {
+                    "type": "string"
+                  },
+                  "noResultsTryNewTitle": {
+                    "type": "string"
+                  },
+                  "noResultsTryNewDescription": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "noTabResultsDescription",
+                  "noCategoryResultsDescription",
+                  "errorGettingResultsMessage",
+                  "noResultsTitle",
+                  "noResultsDescription",
+                  "noResultsTryNewTitle",
+                  "noResultsTryNewDescription"
+                ]
+              },
+              "button": {
+                "type": "object",
+                "properties": {
+                  "moreFiltersText": {
+                    "type": "string"
+                  },
+                  "lessFiltersText": {
+                    "type": "string"
+                  },
+                  "applyText": {
+                    "type": "string"
+                  },
+                  "cancelText": {
+                    "type": "string"
+                  },
+                  "doneText": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "moreFiltersText",
+                  "lessFiltersText",
+                  "applyText",
+                  "cancelText",
+                  "doneText"
+                ]
+              },
+              "description": {
+                "type": "object",
+                "properties": {
+                  "hidePanel": {
+                    "type": "string"
+                  },
+                  "showPanel": {
+                    "type": "string"
+                  },
+                  "filterText": {
+                    "type": "string"
+                  },
+                  "resetFilterText": {
+                    "type": "string"
+                  },
+                  "sortByText": {
+                    "type": "string"
+                  },
+                  "sortedByText": {
+                    "type": "string"
+                  },
+                  "paginationText": {
+                    "type": "string"
+                  },
+                  "suggestionsText": {
+                    "type": "string"
+                  },
+                  "quickLinksText": {
+                    "type": "string"
+                  },
+                  "color": {
+                    "type": "string"
+                  },
+                  "next": {
+                    "type": "string"
+                  },
+                  "previous": {
+                    "type": "string"
+                  },
+                  "submit": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "hidePanel",
+                  "showPanel",
+                  "filterText",
+                  "resetFilterText",
+                  "sortByText",
+                  "sortedByText",
+                  "paginationText",
+                  "suggestionsText",
+                  "quickLinksText",
+                  "color",
+                  "next",
+                  "previous",
+                  "submit"
+                ]
+              },
+              "state": {
+                "type": "object",
+                "properties": {
+                  "loadingError": {
+                    "type": "string"
+                  },
+                  "loading": {
+                    "type": "string"
+                  },
+                  "loaded": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "loadingError",
+                  "loading",
+                  "loaded"
+                ]
+              },
+              "selectedFilters": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "error",
+              "button",
+              "description",
+              "state",
+              "selectedFilters"
+            ]
+          }
+        },
+        "required": [
+          "sortOptions",
+          "results",
+          "pageNumber",
+          "numOfPages",
+          "pageTitle",
+          "partialTitle",
+          "numberOfFiltersSelected",
+          "selectedTab",
+          "totalCountText",
+          "tabs",
+          "searchBox",
+          "suggestions",
+          "nextLink",
+          "responseError",
+          "searchTerm",
+          "hasRecommendations",
+          "internalSearchUrl",
+          "locale",
+          "searchPage",
+          "internalSearchTimeout",
+          "mobile",
+          "hasPreviousResults",
+          "hasNextResults",
+          "hasResults",
+          "hasFilters",
+          "showFilters",
+          "showPagination",
+          "ui"
+        ]
+      }
+    },
+    "required": [
+      "head",
+      "body"
+    ]
+  }

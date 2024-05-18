@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Generated schema for Root",
+    "type": "object",
+    "properties": {
+      "items": {
+        "type": "number"
+      },
+      "ttl": {
+        "type": "number"
+      },
+      "api": {
+        "type": "object",
+        "properties": {
+          "flyout": {
+            "type": "string"
+          },
+          "addToBag": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "flyout",
+          "addToBag"
+        ]
+      }
+    },
+    "required": [
+      "items",
+      "ttl",
+      "api"
+    ]
+  }
