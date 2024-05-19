@@ -6,7 +6,7 @@ const validator = new Validator();
 
 describe("API Bag Status", function () {
    let response;
-   let baseUrl = "https://www.apple.com/shop/bag/status";
+   let endPoint = "/shop/bag/status";
    let params = {
       apikey: "SJHJUH4YFCTTPD4F4",
    };
@@ -16,7 +16,7 @@ describe("API Bag Status", function () {
    };
 
    beforeAll(async () => {
-      response = await axios.get(baseUrl, { params, headers });
+      response = await axios.get(baseUrl + endPoint, { params, headers });
    });
 
    test("GET /shop/bag/status should return status 200", async () => {

@@ -6,7 +6,7 @@ const validator = new Validator();
 
 describe("API Search Item", function () {
    let response;
-   let baseUrl = "https://www.apple.com/shop/searchresults/internalmvc";
+   let endPoint = "/shop/searchresults/internalmvc";
    let params = {
       find: "airtag",
       src: "alp",
@@ -18,7 +18,7 @@ describe("API Search Item", function () {
    };
 
    beforeAll(async () => {
-      response = await axios.get(baseUrl, { params, headers });
+      response = await axios.get(baseUrl + endPoint, { params, headers });
    });
 
    test("GET /searchresults/internalmvc should return status 200", async () => {
@@ -30,7 +30,7 @@ describe("API Search Item", function () {
       expect(validationResult.valid).toEqual(true);
    });
 
-   test("GET /searchresults/internalmvc should contain search text", async () => {
+   test("GET /searchresults/internalmvc should contain search text in 'body.searchTerm'", async () => {
       expect(response.data.body.searchTerm).toEqual("airtag");
    });
 });
