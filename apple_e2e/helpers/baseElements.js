@@ -10,6 +10,10 @@ class BaseElements {
       selector.should("exist").click();
    }
 
+   clickForce(selector) {
+      selector.click({ force: true });
+   }
+
    clickEmpty() {
       cy.get("body").click(0, 0);
    }

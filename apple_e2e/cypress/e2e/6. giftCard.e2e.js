@@ -23,6 +23,7 @@ describe("Gift card", () => {
       giftCardPage.type(giftCardPage.getDeliveryDetailsInput(INPUT_NAME.RECIPIENT_EMAIL), CREDENTIALS.APPLE_ID);
       giftCardPage.type(giftCardPage.getDeliveryDetailsInput(INPUT_NAME.SENDER_NAME), CREDENTIALS.NAME2);
       giftCardPage.type(giftCardPage.getDeliveryDetailsInput(INPUT_NAME.SENDER_EMAIL), CREDENTIALS.APPLE_ID);
+      giftCardPage.clickEmpty();
       giftCardPage.invokeTextVisible(giftCardPage.giftCardPreviewMessage).should("contain", CREDENTIALS.NAME2 + TEXT.GIFT_PREVIEW);
    });
 
@@ -32,7 +33,7 @@ describe("Gift card", () => {
             giftCardPage.clickExist(giftCardPage.getGiftCardThemeSelector(themeIndex));
             giftCardPage.clickExist(giftCardPage.getChooseAmountButton(amountIndex));
             giftCardPage.click(giftCardPage.getDeliveryDetailsInput(inputName));
-            giftCardPage.click(giftCardPage.getDeliveryDetailsInput(INPUT_NAME.SENDER_NAME));
+            giftCardPage.clickEmpty();
             giftCardPage
                .invokeTextVisible(giftCardPage.getErrorInputMessage(errorInputId))
                .should("contain", errorMessage);

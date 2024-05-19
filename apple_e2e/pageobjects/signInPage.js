@@ -31,15 +31,11 @@ class SignInPage extends BasePage {
    }
 
    clickContinueWithPassword() {
-      this.getIframeBody().find('button[id="sign-in"]').click();
-   }
-      
-   getCheckboxInput() {
-      return this.findElementInIframe("type", "checkbox").should("exist");
+      this.findElementInIframe("id", "sign-in").first().click();
    }
 
-   checkRememberMeCheckbox() {
-      this.getCheckboxInput("type", "checkbox").check({ force: true });
+   getCheckboxInput() {
+      return this.findElementInIframe("type", "checkbox").should("exist");
    }
 
    uncheckRememberMeCheckbox() {

@@ -3,6 +3,7 @@ const storePage = require("../../pageobjects/storePage");
 const localeSwitcher = require("../../pageobjects/components/localeSwitcher");
 const globalNavMenu = require("../../pageobjects/components/globalNavMenu");
 const { BTTN_NAME, LINK_NAME, TEXT, ATTR } = require("../../helpers/constants");
+const productPage = require("../../pageobjects/productPage");
 
 describe("Shopping cart", () => {
    beforeEach(() => {
@@ -25,14 +26,15 @@ describe("Shopping cart", () => {
 
          itemPositions.forEach((itemPosition, index) => {
             storePage.clickExist(storePage.getNextCardsScrollerButton(sectionIndex));
-            storePage.click(storePage.getCardsScrollerItem(sectionIndex, itemPosition));
+            storePage.clickExist(storePage.getCardsScrollerItem(sectionIndex, itemPosition));
             storePage.clickExist(storePage.addToCartButton);
             if (index !== itemPositions.length - 1) {
-               homePage.click(globalNavMenu.getNavMenuLinks(LINK_NAME.STORE));
+               productPage.click(globalNavMenu.getNavMenuLinks(LINK_NAME.STORE));
             }
          });
 
-         storePage.invokeAttr(globalNavMenu.getNavMenuButton(BTTN_NAME.BAG), ATTR.ARIA_LABEL)
+         storePage
+            .invokeAttr(globalNavMenu.getNavMenuButton(BTTN_NAME.BAG), ATTR.ARIA_LABEL)
             .should("contain", TEXT.COUNT_BAG + (counter + itemPositions.length));
       });
    });

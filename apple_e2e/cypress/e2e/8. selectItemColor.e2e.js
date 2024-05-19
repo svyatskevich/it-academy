@@ -26,8 +26,8 @@ describe("Select item color", () => {
 
    it("The product info in Availability popup should contain selected product color", () => {
       productPage.click(productPage.checkAvailabilityButton);
-      availabilityPopup.clickAvailabilityColorNavItem(2);
-      productPage.invokeText(availabilityPopup.clickAvailabilityColorNavItem(2)).then((selectedColor) => {
+      productPage.clickForce(availabilityPopup.getAvailabilityColorNavItem(2));
+      productPage.invokeText(availabilityPopup.getAvailabilityColorNavItem(2)).then((selectedColor) => {
             productPage.invokeText(availabilityPopup.availabilityProductInfo).then((productInfo) => {
                   expect(productInfo).to.contain(selectedColor);
                });
