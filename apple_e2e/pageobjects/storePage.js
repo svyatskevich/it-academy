@@ -2,7 +2,7 @@ const BasePage = require("./basePage");
 
 class StorePage extends BasePage {
    get addToCartButton() {
-      return cy.get('.button-block[name="add-to-cart"]');
+      return cy.get('[type="submit"][value="add-to-cart"]');
    }
 
    getProductNavCardsItem(itemIndex) {

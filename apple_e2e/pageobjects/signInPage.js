@@ -49,23 +49,13 @@ class SignInPage extends BasePage {
       this.clickContinueWithPassword();
    }
 
-   getSignInErrorPop() {
-      return this.getIframeBody()
-         .find('[class="error pop-bottom tk-subbody-headline"] [id="errMsg"]')
-         .should("be.visible");
-   }
-
-   getErrorText($errMsg) {
+   decodeSignInErrorText($errMsg) {
       return he.decode($errMsg.text().trim());
    }
 
-   normalizeSpaces(text) {
-      return text.replace(/\s+/g, " ").trim();
-   }
-
    getErrorTextForInvalidPassword() {
-      return this.getSignInErrorPop().then(($errMsg) => {
-         return this.getErrorText($errMsg);
+      return this.findElementInIframe("id", "errMsg").should("be.visible").then(($errMsg) => {
+         return this.decodeSignInErrorText($errMsg);
       });
    }
 }

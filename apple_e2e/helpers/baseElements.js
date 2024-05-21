@@ -1,25 +1,10 @@
 class BaseElements {
-   click(selector, selectorPosition) {
-      if (selectorPosition) {
-         selector[selectorPosition].should("be.visible").click();
-      }
-      selector.should("be.visible").click();
-   }
-
-   clickExist(selector) {
-      selector.should("exist").click();
-   }
-
-   clickForce(selector) {
-      selector.click({ force: true });
+   click(selector, option) {
+      selector.click(option);
    }
 
    clickEmpty() {
       cy.get("body").click(0, 0);
-   }
-
-   invokeTextVisible(selector) {
-      return selector.should("be.visible").invoke("text");
    }
 
    invokeText(selector) {
@@ -36,6 +21,10 @@ class BaseElements {
 
    type(selector, inputValue) {
       return selector.should("exist").click().type(inputValue);
+   }
+
+   normalizeSpaces(text) {
+      return text.replace(/\s+/g, " ").trim();
    }
 }
 

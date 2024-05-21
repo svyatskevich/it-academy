@@ -4,11 +4,12 @@ const localeSwitcher = require("../../pageobjects/components/localeSwitcher");
 const globalNavMenu = require("../../pageobjects/components/globalNavMenu");
 const globalNavSubMenu = require("../../pageobjects/components/globalNavSubMenu");
 const { BTTN_NAME, LINK_NAME, ERROR_MESSAGES, CREDENTIALS } = require("../../helpers/constants");
+const { waitForVisible } = require("../../helpers/wait");
 
 describe("Login", () => {
    beforeEach(() => {
       homePage.navigate("https://www.apple.com/");
-      localeSwitcher.closeLocaleSwitcher();
+      homePage.click(waitForVisible(localeSwitcher.closeButton));
       homePage.click(globalNavMenu.getNavMenuButton(BTTN_NAME.BAG));
       homePage.click(globalNavSubMenu.getMyProfileLinks(LINK_NAME.SIGNIN));
    });

@@ -6,11 +6,12 @@ const globalNavSubMenu = require("../../pageobjects/components/globalNavSubMenu"
 const accessoriesSorts = require("../../pageobjects/components/accessoriesSorts");
 const accessoriesContainer = require("../../pageobjects/components/accessoriesContainer");
 const { BTTN_NAME, ITEM_NAME, TEXT } = require("../../helpers/constants");
+const { waitForVisible } = require("../../helpers/wait");
 
 describe("Accessories sorting", () => {
    beforeEach(() => {
       homePage.navigate("https://www.apple.com/");
-      localeSwitcher.closeLocaleSwitcher();
+      homePage.click(waitForVisible(localeSwitcher.closeButton));
       homePage.click(globalNavMenu.getNavMenuButton(BTTN_NAME.SEARCH));
       globalNavSubMenu.goToSearchResultPage(TEXT.IPHONE);
       searchPage.click(searchPage.getTabNavItem(ITEM_NAME.ACCESSORIES));
@@ -32,7 +33,7 @@ describe("Accessories sorting", () => {
       it(`Accessories should be sorted by price ${description}`, () => {
          searchPage.click(accessoriesSorts.getAccessoriesSortListItem(sortItem));
          accessoriesSorts
-            .invokeTextVisible(accessoriesSorts.selectedSortItem)
+            .invokeText(waitForVisible(accessoriesSorts.selectedSortItem))
             .should("contain", `Price: ${description}`);
          accessoriesContainer.getPriceOfAccessoriesItem(1).then((price1) => {
             accessoriesContainer.getPriceOfAccessoriesItem(2).then((price2) => {
